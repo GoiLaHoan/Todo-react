@@ -30,6 +30,27 @@ export default function Header() {
     }
   };
 
+  const handleOnChangeEnter =(e) => {
+    if (e.key === "Enter") {
+      if (todo.trim()) {
+        dispatch(
+          actions.addTodo({
+            id: Date.now(),
+            title: todo.trim(),
+            isDone: false,
+          })
+        );
+        setTodo("");
+      } else {
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 800);
+      }
+    }
+
+  }
+
   const dispatch = useDispatch();
 
   return (
@@ -39,6 +60,7 @@ export default function Header() {
         <input
           type="text"
           onChange={handleOnChange}
+          onKeyUp={handleOnChangeEnter}
           value={todo}
           placeholder="What do you wanna do ? my friend 🚀"
         />

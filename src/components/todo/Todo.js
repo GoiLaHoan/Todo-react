@@ -44,6 +44,21 @@ export default function Todo(props) {
       );
     }
   };
+
+  const handleUpdateTodoByEnter = (e) => {
+    if (e.key === "Enter") {
+      if (value !== props.todo.title) {
+        dispatch(
+          actions.updateTodo({
+            ...props.todo,
+            title: value,
+          })
+        );
+      }
+      e.target.blur();
+    }
+  }
+
   return (
     <div className="todo-container" ref={todoEl}>
       <input
@@ -59,6 +74,7 @@ export default function Todo(props) {
         value={value}
         onChange={handleEditTodo}
         onBlur={handleUpdateTodo}
+        onKeyUp={handleUpdateTodoByEnter}
         ref={todoInputEl}
       />
       <button onClick={handleDeleteTodo}>🗑️</button>
