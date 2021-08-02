@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+.todo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+  border-bottom: 1px solid rgb(53, 51, 51);
+  padding: 10px 0;
+  flex-direction: row;
+  animation: fadeIn 0.4s linear forwards;
+}
+.remove {
+  animation: fadeOut 0.4s linear forwards;
+}
+
+.todo-container:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.todo-container > .checkbox {
+  width: auto;
+  align-self: auto;
+}
+.todo-container > .text {
+  width: 80%;
+  border: none;
+  margin: 0 5px;
+  padding: 0 5px;
+  border-radius: 10px;
+  font-family: "KoHo", sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.todo-container > .text:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.todo-container > .text:focus {
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+.todo-container > .text.done {
+  color: #929292;
+  text-decoration: line-through 2px solid #929292;
+}
+.todo-container > button {
+  width: auto;
+  border-radius: 10px;
+  border: none;
+  height: auto;
+  cursor: pointer;
+  padding: 3px;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  /* font-family: "KoHo", sans-serif; */
+  /* font-weight: 300; */
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease-in-out;
+}
+.todo-container > button:hover {
+  transform: scale(1.05);
+}

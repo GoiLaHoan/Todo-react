@@ -1,0 +1,18 @@
+.App {
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  /* flex-direction: column; */
+  background-color: #7fffd4;
+  /* width: 100vw; */
+  min-height: 100vh;
+  flex: 1;
+}
+.main-container {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10%;
+  max-height: 100vh;
+}

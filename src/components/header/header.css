@@ -1,0 +1,128 @@
+@keyframes fadeInHeader {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0.2;
+  width: 100%;
+  margin: 10px 0;
+  animation: fadeInHeader 0.5s linear forwards;
+}
+.header-container > h1 {
+  font-size: 80px;
+  flex: 3;
+  align-items: center;
+  display: flex;
+}
+.header-container > .input-container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+
+  align-items: center;
+  padding: 2px;
+}
+.header-container > .input-container > input {
+  width: 100%;
+  margin: 0 10px 0 5px;
+  padding: 0 5px;
+  border-radius: 10px;
+  font-family: "KoHo", sans-serif;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.header-container > .input-container > input:hover,
+.header-container > .input-container > input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.header-container > .input-container > .add-button {
+  width: auto;
+  border-radius: 50%;
+  border-color: aqua;
+  height: 100%;
+  cursor: pointer;
+  padding: 3px;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  font-family: "KoHo", sans-serif;
+  font-weight: 300;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: white;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease-in-out;
+  margin-right: 5px;
+  
+}
+.header-container > .input-container > .add-button:hover {
+  transform: scale(1.05);
+}
+.header-container > .input-container > .error-button {
+  width: auto;
+  border-radius: 10px;
+  border: none;
+  height: auto;
+  cursor: pointer;
+  padding: 3px;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  font-family: "KoHo", sans-serif;
+  font-weight: 300;
+  background-color: rgba(235, 15, 15, 0.884);
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease-in-out;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  height: 100%;
+  margin-right: 5px;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
